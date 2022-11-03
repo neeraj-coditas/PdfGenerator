@@ -9,7 +9,7 @@ import java.io.FileOutputStream
 import java.io.IOException
 
 class PdfGenerator {
-     fun createPDF(context: Context, profession: String, summary: String, designation: String, experience: String) {
+     public fun createPDF(context: Context, profession: String, summary: String, designation: String, experience: String) {
         val myPdfDocument = PdfDocument()
         val myPaint = Paint()
 
