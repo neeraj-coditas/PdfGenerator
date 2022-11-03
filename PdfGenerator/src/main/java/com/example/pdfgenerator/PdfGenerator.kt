@@ -8,8 +8,8 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 
-class PdfGenerator {
-    public fun createPDF(
+object PdfGenerator {
+    fun createPDF(
         context: Context,
         profession: String,
         summary: String,
