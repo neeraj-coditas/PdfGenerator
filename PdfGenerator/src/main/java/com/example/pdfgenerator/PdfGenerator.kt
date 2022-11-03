@@ -49,3 +49,10 @@ object PdfGenerator {
         myPdfDocument.close()
     }
 }
+
+data class FormEditorScreen1Data(
+    var profession: String,
+    var summary: String,
+    var designation: String,
+    var experience: String
+)
