@@ -9,7 +9,13 @@ import java.io.FileOutputStream
 import java.io.IOException
 
 class PdfGenerator {
-     public fun createPDF(context: Context, profession: String, summary: String, designation: String, experience: String) {
+    public fun createPDF(
+        context: Context,
+        profession: String,
+        summary: String,
+        designation: String,
+        experience: String
+    ) {
         val myPdfDocument = PdfDocument()
         val myPaint = Paint()
 
@@ -25,13 +31,14 @@ class PdfGenerator {
         canvas2.drawText("Welcome to Page 2", 40F, 50F, myPaint)
         myPdfDocument.finishPage(mypage2)
 
-        val mypageInfo3 = PdfDocument.PageInfo.Builder(400,600,3).create()
+        val mypageInfo3 = PdfDocument.PageInfo.Builder(400, 600, 3).create()
         val mypage3 = myPdfDocument.startPage(mypageInfo3)
         val canvas3 = mypage3.canvas
         canvas3.drawText(profession, 40F, 50F, myPaint)
         canvas3.drawText(summary, 40F, 60F, myPaint)
         canvas3.drawText(designation, 40F, 80F, myPaint)
         canvas3.drawText(experience, 40F, 90F, myPaint)
+        myPdfDocument.finishPage(mypage3)
 
 
         val file = File(context.getExternalFilesDir("/"), "FirstPDF.pdf")
