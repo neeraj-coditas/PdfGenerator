@@ -11,7 +11,14 @@ import java.io.IOException
 object PdfGenerator {
     fun createPDF(
         context: Context,
-        obj1: FormEditorScreen1Data
+        profession:String,
+        summary:String,
+        designation:String,
+        experience:String,
+        primarySkill: String,
+        secondarySkill: String,
+        primaryDomain: String,
+        secondaryDomain:String
     ) {
         val myPdfDocument = PdfDocument()
         val myPaint = Paint()
@@ -31,10 +38,14 @@ object PdfGenerator {
         val mypageInfo3 = PdfDocument.PageInfo.Builder(400, 600, 3).create()
         val mypage3 = myPdfDocument.startPage(mypageInfo3)
         val canvas3 = mypage3.canvas
-        canvas3.drawText(obj1.profession, 40F, 50F, myPaint)
-        canvas3.drawText(obj1.summary, 40F, 60F, myPaint)
-        canvas3.drawText(obj1.designation, 40F, 80F, myPaint)
-        canvas3.drawText(obj1.experience, 40F, 90F, myPaint)
+        canvas3.drawText(profession, 40F, 50F, myPaint)
+        canvas3.drawText(summary, 40F, 70F, myPaint)
+        canvas3.drawText(designation, 40F, 90F, myPaint)
+        canvas3.drawText(experience, 40F, 110F, myPaint)
+        canvas3.drawText(primarySkill, 40F, 120F, myPaint)
+        canvas3.drawText(secondarySkill, 40F, 130F, myPaint)
+        canvas3.drawText(primaryDomain, 40F, 150F, myPaint)
+        canvas3.drawText(secondaryDomain, 40F, 170F, myPaint)
         myPdfDocument.finishPage(mypage3)
 
         val file = File(context.getExternalFilesDir("/"), "FirstPDF.pdf")
@@ -49,10 +60,3 @@ object PdfGenerator {
         myPdfDocument.close()
     }
 }
-
-data class FormEditorScreen1Data(
-    var profession: String,
-    var summary: String,
-    var designation: String,
-    var experience: String
-)
