@@ -11,14 +11,37 @@ import java.io.IOException
 object PdfGenerator {
     fun createPDF(
         context: Context,
-        profession:String,
-        summary:String,
-        designation:String,
-        experience:String,
+
+        profession: String,
+        summary: String,
+        designation: String,
+        experience: String,
+
         primarySkill: String,
         secondarySkill: String,
         primaryDomain: String,
-        secondaryDomain:String
+        secondaryDomain: String,
+
+        language: String
+        database: String,
+        vcs: String,
+        cloud: String,
+        operatingSystem: String,
+
+        project1: String,
+        role1: String,
+        duration1: String,
+        Description1: String,
+        project2: String,
+        role2: String,
+        duration2: String,
+        Description2: String,
+
+        qualification: String,
+        passing: String,
+        institution: String,
+        platform: String,
+        achievement: String
     ) {
         val myPdfDocument = PdfDocument()
         val myPaint = Paint()
