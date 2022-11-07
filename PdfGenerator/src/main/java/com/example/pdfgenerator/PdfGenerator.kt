@@ -22,7 +22,7 @@ object PdfGenerator {
         primaryDomain: String,
         secondaryDomain: String,
 
-        language: String
+        language: String,
         database: String,
         vcs: String,
         cloud: String,
