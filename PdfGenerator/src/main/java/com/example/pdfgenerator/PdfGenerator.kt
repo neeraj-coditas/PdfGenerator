@@ -31,11 +31,11 @@ object PdfGenerator {
         project1: String,
         role1: String,
         duration1: String,
-        Description1: String,
+        description1: String,
         project2: String,
         role2: String,
         duration2: String,
-        Description2: String,
+        description2: String,
 
         qualification: String,
         passing: String,
@@ -53,10 +53,33 @@ object PdfGenerator {
         canvas.drawText(summary, 40F, 70F, myPaint)
         canvas.drawText(designation, 40F, 90F, myPaint)
         canvas.drawText(experience, 40F, 110F, myPaint)
+
         canvas.drawText(primarySkill, 40F, 130F, myPaint)
         canvas.drawText(secondarySkill, 40F, 150F, myPaint)
         canvas.drawText(primaryDomain, 40F, 170F, myPaint)
         canvas.drawText(secondaryDomain, 40F, 190F, myPaint)
+
+        canvas.drawText(language, 40F, 210F, myPaint)
+        canvas.drawText(database, 40F, 230F, myPaint)
+        canvas.drawText(vcs, 40F, 250F, myPaint)
+        canvas.drawText(cloud, 40F, 270F, myPaint)
+        canvas.drawText(operatingSystem, 40F, 290F, myPaint)
+
+        canvas.drawText(project1, 40F, 310F, myPaint)
+        canvas.drawText(role1, 40F, 330F, myPaint)
+        canvas.drawText(duration1, 40F, 350F, myPaint)
+        canvas.drawText(description1, 40F, 370F, myPaint)
+        canvas.drawText(project2, 40F, 390F, myPaint)
+        canvas.drawText(role2, 40F, 410F, myPaint)
+        canvas.drawText(duration2, 40F, 430F, myPaint)
+        canvas.drawText(description2, 40F, 450F, myPaint)
+
+        canvas.drawText(qualification, 40F, 470F, myPaint)
+        canvas.drawText(passing, 40F, 490F, myPaint)
+        canvas.drawText(institution, 40F, 510F, myPaint)
+        canvas.drawText(platform, 40F, 530F, myPaint)
+        canvas.drawText(achievement, 40F, 550F, myPaint)
+
         myPdfDocument.finishPage(mypage)
 
         val file = File(context.getExternalFilesDir("/"), "FirstPDF.pdf")
