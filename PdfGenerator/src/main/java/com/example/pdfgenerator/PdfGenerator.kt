@@ -1,6 +1,8 @@
 package com.example.pdfgenerator
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.pdf.PdfDocument
@@ -49,8 +51,8 @@ object PdfGenerator {
         achievement: String
     ) {
         val myPdfDocument = PdfDocument()
-        //val bmp = BitmapFactory.decodeResource(context.resources, R.drawable.ic_coditas_name_logo)
-        //val scaledBitmap = Bitmap.createScaledBitmap(bmp, 80, 25, false)
+        val bmp = BitmapFactory.decodeResource(context.resources, R.drawable.ic_coditas_name_logo)
+        val scaledBitmap = Bitmap.createScaledBitmap(bmp, 80, 25, false)
 
         val textPaint = TextPaint()
         textPaint.textSize = 10F
@@ -78,7 +80,7 @@ object PdfGenerator {
         val mypage = myPdfDocument.startPage(mypageInfo)
         val canvas = mypage.canvas
 
-        //canvas.drawBitmap(scaledBitmap, 55F, 70F, myPaint)
+        canvas.drawBitmap(scaledBitmap, 55F, 70F, myPaint)
         canvas.drawText(fullName, 60F, 140F, header1)
         canvas.drawText(profession, 60F, 160F, professionPaint)
         var mTextLayout =
