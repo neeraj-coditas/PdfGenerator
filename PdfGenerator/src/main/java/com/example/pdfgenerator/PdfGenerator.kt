@@ -85,7 +85,7 @@ object PdfGenerator {
         canvas.drawText(profession, 60F, 160F, professionPaint)
         var mTextLayout =
             StaticLayout(
-                "$fullName is ${summary} with ${experience} of experience in the industry. $fullName's educational background is ${qualification} and works as ${designation} at Coditas.",
+                "$fullName is $summary with $experience of experience in the industry. $fullName's educational background is $qualification and works as $designation at Coditas.",
                 textPaint,
                 canvas.width - 100,
                 Layout.Alignment.ALIGN_NORMAL,
@@ -102,7 +102,7 @@ object PdfGenerator {
 
         mTextLayout =
             StaticLayout(
-                "$fullName has a passion for ${primarySkill} and a ${secondarySkill} enthusiast, having gained experience in both ${primaryDomain} and ${secondaryDomain} over a span of ${experience}. He/She has pursued ${qualification} in ${specialization} and is currently working as ${designation}",
+                "$fullName has a passion for $primarySkill and a $secondarySkill enthusiast, having gained experience in both $primaryDomain and $secondaryDomain over a span of ${experience}. He/She has pursued $qualification in $specialization and is currently working as $designation",
                 textPaint,
                 canvas.width - 100,
                 Layout.Alignment.ALIGN_NORMAL,
@@ -145,7 +145,7 @@ object PdfGenerator {
         canvas2.drawText("Experience", 60F, 100F, sectionNamePaint)
 
         canvas2.drawText(project1, 155F, 90F, header2)
-        canvas2.drawText("${role1} | ${duration1}", 155F, 105F, header3)
+        canvas2.drawText("$role1 | $duration1", 155F, 105F, header3)
 
         mTextLayout =
             StaticLayout(
@@ -170,7 +170,7 @@ object PdfGenerator {
         canvas2.drawText(project2, 155F, height1, header2)
 
         val height2 = height1 + 15F
-        canvas2.drawText("${role2} | ${duration2}", 155F, height2, header3)
+        canvas2.drawText("$role2 | $duration2", 155F, height2, header3)
 
         mTextLayout =
             StaticLayout(
@@ -194,7 +194,7 @@ object PdfGenerator {
         canvas2.drawText("Education", 60F, height3 + 10, sectionNamePaint)
         canvas2.drawText(qualification, 155F, height3, header2)
         canvas2.drawText(
-            "${passing} | ${institution}",
+            "$passing | $institution",
             155F,
             height3 + 15.5F,
             textPaint
