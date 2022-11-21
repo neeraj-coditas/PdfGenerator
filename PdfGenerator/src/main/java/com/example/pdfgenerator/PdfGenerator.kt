@@ -210,7 +210,7 @@ object PdfGenerator {
         myPdfDocument.finishPage(mypage2)
 
 
-        val file = File(context.getExternalFilesDir("/"), profession)
+        val file = File(context.getExternalFilesDir("/"), "$profession.pdf")
 
         try {
             myPdfDocument.writeTo(FileOutputStream(file))
