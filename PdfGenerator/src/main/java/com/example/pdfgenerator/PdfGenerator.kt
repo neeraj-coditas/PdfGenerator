@@ -15,6 +15,11 @@ import java.io.FileOutputStream
 import java.io.IOException
 
 object PdfGenerator {
+
+    data class ExperienceData(val projectName: String, val role: String, val duration: String, val description: String)
+
+    var experienceList = ArrayList<ExperienceData>()
+
     fun createPDF(
         context: Context,
         fullName:String,
@@ -34,8 +39,7 @@ object PdfGenerator {
         cloud: String,
         operatingSystem: String,
 
-        experienceList : ArrayList<ExperienceData>,
-
+        //experienceList : ArrayList<ExperienceData>,
         /*project1: String,
         role1: String,
         duration1: String,
@@ -253,6 +257,4 @@ object PdfGenerator {
         }
         myPdfDocument.close()
     }
-
-    data class ExperienceData(val projectName: String, val role: String, val duration: String, val description: String)
 }
