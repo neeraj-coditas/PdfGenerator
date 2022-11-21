@@ -36,14 +36,14 @@ object PdfGenerator {
 
         experienceList : ArrayList<ExperienceData>,
 
-        project1: String,
+        /*project1: String,
         role1: String,
         duration1: String,
         description1: String,
         project2: String,
         role2: String,
         duration2: String,
-        description2: String,
+        description2: String,*/
 
         qualification: String,
         passing: String,
@@ -146,7 +146,37 @@ object PdfGenerator {
 
         canvas2.drawText("Experience", 60F, 100F, sectionNamePaint)
 
-        canvas2.drawText(project1, 155F, 90F, header2)
+        var x = 155F
+        var y = 90F
+
+        for(i in 1..experienceList.size){
+
+            canvas2.drawText(experienceList[i].projectName, 155F, 90F, header2)
+            y += 15
+            canvas2.drawText("${experienceList[i].role} | ${experienceList[i].duration}", 155F, 105F, header3)
+
+            mTextLayout =
+                StaticLayout(
+                    experienceList[i].description,
+                    textPaint,
+                    canvas2.width - 200,
+                    Layout.Alignment.ALIGN_NORMAL,
+                    1.0f,
+                    0.0f,
+                    true
+                )
+            canvas2.save()
+            textX = 155F
+            textY = 115F
+            canvas2.translate(textX, textY)
+            mTextLayout.draw(canvas2)
+            canvas2.restore()
+            mTextLayout.height
+
+            y = 120F + mTextLayout.height + 20F
+        }
+
+       /* canvas2.drawText(project1, 155F, 90F, header2)
         canvas2.drawText("$role1 | $duration1", 155F, 105F, header3)
 
         mTextLayout =
@@ -189,9 +219,9 @@ object PdfGenerator {
         textY = height2 + 10F
         canvas2.translate(textX, textY)
         mTextLayout.draw(canvas2)
-        canvas2.restore()
+        canvas2.restore()*/
 
-        val height3 = height2 + 15F + mTextLayout.height + 30F
+        val height3 = y + 15F + mTextLayout.height + 30F
 
         canvas2.drawText("Education", 60F, height3 + 10, sectionNamePaint)
         canvas2.drawText(qualification, 155F, height3, header2)
