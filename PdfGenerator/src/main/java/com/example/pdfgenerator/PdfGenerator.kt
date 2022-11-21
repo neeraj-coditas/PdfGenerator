@@ -221,4 +221,6 @@ object PdfGenerator {
         }
         myPdfDocument.close()
     }
+
+    data class experienceData(val projectName: String, val role: String, val duration: String, val description: String)
 }
