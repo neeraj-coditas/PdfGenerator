@@ -34,14 +34,16 @@ object PdfGenerator {
         cloud: String,
         operatingSystem: String,
 
-        project1: String,
+        experienceList : ArrayList<ExperienceData>,
+
+        /*project1: String,
         role1: String,
         duration1: String,
         description1: String,
         project2: String,
         role2: String,
         duration2: String,
-        description2: String,
+        description2: String,*/
 
         qualification: String,
         passing: String,
@@ -222,5 +224,5 @@ object PdfGenerator {
         myPdfDocument.close()
     }
 
-    data class experienceData(val projectName: String, val role: String, val duration: String, val description: String)
+    data class ExperienceData(val projectName: String, val role: String, val duration: String, val description: String)
 }
