@@ -36,14 +36,14 @@ object PdfGenerator {
 
         experienceList : ArrayList<ExperienceData>,
 
-        /*project1: String,
+        project1: String,
         role1: String,
         duration1: String,
         description1: String,
         project2: String,
         role2: String,
         duration2: String,
-        description2: String,*/
+        description2: String,
 
         qualification: String,
         passing: String,
