@@ -153,7 +153,7 @@ object PdfGenerator {
         var x = 155F
         var y = 90F
 
-        for(i in 1..experienceList.size){
+        for(i in experienceList.indices){
 
             canvas2.drawText(experienceList[i].projectName, 155F, 90F, header2)
             y += 15
