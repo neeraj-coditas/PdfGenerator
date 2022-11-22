@@ -126,21 +126,23 @@ object PdfGenerator {
         mTextLayout.draw(canvas)
         canvas.restore()
 
+        var pageOneHeightTwo = pageOneHeight + 120F
+
         canvas.drawText("Key Skills", 60F, 340F, sectionNamePaint)
 
-        canvas.drawText("Programming Languages/Frameworks", 155F, 330F, header2)
+        canvas.drawText("Programming Languages/Frameworks", 155F, pageOneHeightTwo, header2)
         canvas.drawText(language, 155F, 345.5F, textPaint)
 
-        canvas.drawText("Database", 155F, 370F, header2)
+        canvas.drawText("Database", 155F, pageOneHeightTwo+40F, header2)
         canvas.drawText(database, 155F, 385.5F, textPaint)
 
-        canvas.drawText("Version Control Systems", 155F, 410F, header2)
+        canvas.drawText("Version Control Systems", 155F, pageOneHeightTwo+80F, header2)
         canvas.drawText(vcs, 155F, 425.5F, textPaint)
 
-        canvas.drawText("Cloud Technologies", 155F, 450F, header2)
+        canvas.drawText("Cloud Technologies", 155F, pageOneHeightTwo+120F, header2)
         canvas.drawText(cloud, 155F, 465.5F, textPaint)
 
-        canvas.drawText("Operating systems", 155F, 490F, header2)
+        canvas.drawText("Operating systems", 155F, pageOneHeightTwo+160F, header2)
         canvas.drawText(operatingSystem, 155F, 505.5F, textPaint)
 
         myPdfDocument.finishPage(mypage)
