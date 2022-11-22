@@ -131,7 +131,7 @@ object PdfGenerator {
         canvas.drawText("Key Skills", 60F, pageOneHeightTwo+10F, sectionNamePaint)
 
         canvas.drawText("Programming Languages/Frameworks", 155F, pageOneHeightTwo, header2)
-        canvas.drawText(language, 155F, 15.5 + pageOneHeightTwo, textPaint)
+        canvas.drawText(language, 155F, 15.5F + pageOneHeightTwo, textPaint)
 
         canvas.drawText("Database", 155F, pageOneHeightTwo+40F, header2)
         canvas.drawText(database, 155F, 55.5F+ pageOneHeightTwo, textPaint)
