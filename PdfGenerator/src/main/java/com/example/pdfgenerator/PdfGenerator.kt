@@ -105,6 +105,9 @@ object PdfGenerator {
         canvas.translate(textX, textY)
         mTextLayout.draw(canvas)
         canvas.restore()
+        mTextLayout.height
+
+        var pageOneHeight = mTextLayout.height + 180F
 
         mTextLayout =
             StaticLayout(
@@ -118,7 +121,7 @@ object PdfGenerator {
             )
         canvas.save()
         textX = 60F
-        textY = 230F
+        textY = pageOneHeight + 20F
         canvas.translate(textX, textY)
         mTextLayout.draw(canvas)
         canvas.restore()
