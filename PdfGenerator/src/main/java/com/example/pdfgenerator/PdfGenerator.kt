@@ -82,7 +82,7 @@ object PdfGenerator {
 
         val myPaint = Paint()
 
-        val mypageInfo = PdfDocument.PageInfo.Builder(400, 600, 1).create()
+        val mypageInfo = PdfDocument.PageInfo.Builder(400, 800, 1).create()
         val mypage = myPdfDocument.startPage(mypageInfo)
         val canvas = mypage.canvas
 
@@ -128,22 +128,22 @@ object PdfGenerator {
 
         var pageOneHeightTwo = pageOneHeight + 120F
 
-        canvas.drawText("Key Skills", 60F, 340F, sectionNamePaint)
+        canvas.drawText("Key Skills", 60F, pageOneHeightTwo+10F, sectionNamePaint)
 
         canvas.drawText("Programming Languages/Frameworks", 155F, pageOneHeightTwo, header2)
-        canvas.drawText(language, 155F, 345.5F, textPaint)
+        canvas.drawText(language, 155F, 15.5 + pageOneHeightTwo, textPaint)
 
         canvas.drawText("Database", 155F, pageOneHeightTwo+40F, header2)
-        canvas.drawText(database, 155F, 385.5F, textPaint)
+        canvas.drawText(database, 155F, 55.5F+ pageOneHeightTwo, textPaint)
 
         canvas.drawText("Version Control Systems", 155F, pageOneHeightTwo+80F, header2)
-        canvas.drawText(vcs, 155F, 425.5F, textPaint)
+        canvas.drawText(vcs, 155F, 95.5F + pageOneHeightTwo, textPaint)
 
         canvas.drawText("Cloud Technologies", 155F, pageOneHeightTwo+120F, header2)
-        canvas.drawText(cloud, 155F, 465.5F, textPaint)
+        canvas.drawText(cloud, 155F, 15.5F + pageOneHeightTwo, textPaint)
 
         canvas.drawText("Operating systems", 155F, pageOneHeightTwo+160F, header2)
-        canvas.drawText(operatingSystem, 155F, 505.5F, textPaint)
+        canvas.drawText(operatingSystem, 155F, 175.5F+ pageOneHeightTwo, textPaint)
 
         myPdfDocument.finishPage(mypage)
 
