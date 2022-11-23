@@ -79,7 +79,7 @@ object PdfGenerator {
 
         val hintPaint = TextPaint()
         hintPaint.typeface = Typeface.create(Typeface.DEFAULT, Typeface.ITALIC)
-        hintPaint.textSize = 13F
+        hintPaint.textSize = 10F
 
         val myPaint = Paint()
 
