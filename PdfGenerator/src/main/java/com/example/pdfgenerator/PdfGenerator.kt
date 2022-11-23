@@ -246,7 +246,26 @@ object PdfGenerator {
         canvas2.drawText("Achievements", 60F, height4 + 10F, sectionNamePaint)
         canvas2.drawText(platform, 155F, height4, header2)
         val achievementUpdated = achievement.replace("-","\n",true)
-        canvas2.drawText(achievementUpdated, 155F, height4 + 15.5F, textPaint)
+        //canvas2.drawText(achievementUpdated, 155F, height4 + 15.5F, textPaint)
+
+        mTextLayout =
+            StaticLayout(
+               achievementUpdated,
+                textPaint,
+                canvas2.width - 200,
+                Layout.Alignment.ALIGN_NORMAL,
+                1.0f,
+                0.0f,
+                true
+            )
+        canvas2.save()
+        textX = 155F
+        textY = height4 + 15.5F
+        canvas2.translate(textX, textY)
+        mTextLayout.draw(canvas2)
+        canvas2.restore()
+        mTextLayout.height
+
 
 
         myPdfDocument.finishPage(mypage2)
