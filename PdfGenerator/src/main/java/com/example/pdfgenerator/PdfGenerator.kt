@@ -245,7 +245,7 @@ object PdfGenerator {
 
         canvas2.drawText("Achievements", 60F, height4 + 10F, sectionNamePaint)
         canvas2.drawText(platform, 155F, height4, header2)
-        val achievementUpdated = achievement.replace("-","\n",true)
+        val achievementUpdated = achievement.replace("-","\n -",true)
         //canvas2.drawText(achievementUpdated, 155F, height4 + 15.5F, textPaint)
 
         mTextLayout =
@@ -260,7 +260,7 @@ object PdfGenerator {
             )
         canvas2.save()
         textX = 155F
-        textY = height4 + 15.5F
+        textY = height4
         canvas2.translate(textX, textY)
         mTextLayout.draw(canvas2)
         canvas2.restore()
