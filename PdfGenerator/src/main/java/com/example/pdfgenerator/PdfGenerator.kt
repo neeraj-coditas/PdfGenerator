@@ -154,7 +154,7 @@ object PdfGenerator {
         val mypage2 = myPdfDocument.startPage(mypageInfo2)
         val canvas2 = mypage2.canvas
 
-        canvas2.drawText("Experience", 60F, 100F, sectionNamePaint)
+        canvas2.drawText("Experience", 60F, 90F, sectionNamePaint)
         canvas2.drawText("Briefing of projects worked on to showcase experience", 155F, 90F, hintPaint)
 
         var x = 155F
@@ -235,12 +235,12 @@ object PdfGenerator {
         val height3 = y + 15F + mTextLayout.height + 30F
 
         canvas2.drawText("Education", 60F, height3 + 10, sectionNamePaint)
-        canvas2.drawText("Details of last educational qualification", 155F, height3 - 10, hintPaint)
-        canvas2.drawText(qualification, 155F, height3, header2)
+        canvas2.drawText("Details of last educational qualification", 155F, height3 +10F, hintPaint)
+        canvas2.drawText(qualification, 155F, height3 + 25F, header2)
         canvas2.drawText(
             "$passing | $institution",
             155F,
-            height3 + 15.5F,
+            height3 + 35F,
             textPaint
         )
 
