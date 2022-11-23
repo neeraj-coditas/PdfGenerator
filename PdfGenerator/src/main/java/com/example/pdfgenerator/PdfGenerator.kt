@@ -82,7 +82,7 @@ object PdfGenerator {
 
         val myPaint = Paint()
 
-        val mypageInfo = PdfDocument.PageInfo.Builder(400, 800, 1).create()
+        val mypageInfo = PdfDocument.PageInfo.Builder(400, 700, 1).create()
         val mypage = myPdfDocument.startPage(mypageInfo)
         val canvas = mypage.canvas
 
