@@ -140,7 +140,7 @@ object PdfGenerator {
         canvas.drawText(vcs, 155F, 95.5F + pageOneHeightTwo, textPaint)
 
         canvas.drawText("Cloud Technologies", 155F, pageOneHeightTwo+120F, header2)
-        canvas.drawText(cloud, 155F, 15.5F + pageOneHeightTwo, textPaint)
+        canvas.drawText(cloud, 155F, 135.5F + pageOneHeightTwo, textPaint)
 
         canvas.drawText("Operating systems", 155F, pageOneHeightTwo+160F, header2)
         canvas.drawText(operatingSystem, 155F, 175.5F+ pageOneHeightTwo, textPaint)
