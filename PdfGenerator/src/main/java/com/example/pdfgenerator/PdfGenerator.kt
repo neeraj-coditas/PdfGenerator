@@ -91,7 +91,7 @@ object PdfGenerator {
         canvas.drawText(profession, 60F, 160F, professionPaint)
         var mTextLayout =
             StaticLayout(
-                "$fullName is $summary with $experience of experience in the industry. $fullName's educational background is $qualification and works as $designation at Coditas.",
+                "$summary. $fullName has $experience of experience in the industry. $fullName's educational background is $qualification and works as $designation at Coditas.",
                 textPaint,
                 canvas.width - 100,
                 Layout.Alignment.ALIGN_NORMAL,
