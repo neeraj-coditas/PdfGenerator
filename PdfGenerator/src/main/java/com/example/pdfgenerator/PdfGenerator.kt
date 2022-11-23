@@ -84,7 +84,7 @@ object PdfGenerator {
 
         val myPaint = Paint()
 
-        val mypageInfo = PdfDocument.PageInfo.Builder(400, 700, 1).create()
+        var mypageInfo = PdfDocument.PageInfo.Builder(400, 700, 1).create()
         val mypage = myPdfDocument.startPage(mypageInfo)
         val canvas = mypage.canvas
 
@@ -147,6 +147,7 @@ object PdfGenerator {
         canvas.drawText("Operating systems", 155F, pageOneHeightTwo+160F, header2)
         canvas.drawText(operatingSystem, 155F, 175.5F+ pageOneHeightTwo, textPaint)
 
+
         myPdfDocument.finishPage(mypage)
 
         //PAGE 2
@@ -155,7 +156,7 @@ object PdfGenerator {
         val mypage2 = myPdfDocument.startPage(mypageInfo2)
         val canvas2 = mypage2.canvas
 
-        canvas2.drawText("Experience", 60F, 90F, sectionNamePaint)
+        canvas2.drawText("Experience", 60F, 95F, sectionNamePaint)
         canvas2.drawText("Briefing of projects worked on to showcase experience", 155F, 90F, hintPaint)
 
         var x = 155F
