@@ -235,8 +235,8 @@ object PdfGenerator {
         val height3 = y + 15F + mTextLayout.height + 30F
 
         canvas2.drawText("Education", 60F, height3 + 10, sectionNamePaint)
-        canvas2.drawText("Details of last educational qualification", 155F, height3 +10F, hintPaint)
-        canvas2.drawText(qualification, 155F, height3 + 25F, header2)
+        canvas2.drawText("Details of last educational qualification", 155F, height3 + 5F, hintPaint)
+        canvas2.drawText(qualification, 155F, height3 + 20F, header2)
         canvas2.drawText(
             "$passing | $institution",
             155F,
