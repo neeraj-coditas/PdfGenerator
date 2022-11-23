@@ -1,10 +1,7 @@
 package com.example.pdfgenerator
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.graphics.Paint
+import android.graphics.*
 import android.graphics.pdf.PdfDocument
 import android.text.Layout
 import android.text.StaticLayout
@@ -80,6 +77,10 @@ object PdfGenerator {
         val professionPaint = TextPaint()
         professionPaint.textSize = 13F
 
+        val hintPaint = TextPaint()
+        hintPaint.typeface = Typeface.create(Typeface.DEFAULT, Typeface.ITALIC)
+        hintPaint.textSize = 13F
+
         val myPaint = Paint()
 
         val mypageInfo = PdfDocument.PageInfo.Builder(400, 700, 1).create()
@@ -154,6 +155,7 @@ object PdfGenerator {
         val canvas2 = mypage2.canvas
 
         canvas2.drawText("Experience", 60F, 100F, sectionNamePaint)
+        canvas2.drawText("Briefing of projects worked on to showcase experience", 155F, 90F, hintPaint)
 
         var x = 155F
         var y = 90F
@@ -233,6 +235,7 @@ object PdfGenerator {
         val height3 = y + 15F + mTextLayout.height + 30F
 
         canvas2.drawText("Education", 60F, height3 + 10, sectionNamePaint)
+        canvas2.drawText("Details of last educational qualification", 155F, height3 - 10, hintPaint)
         canvas2.drawText(qualification, 155F, height3, header2)
         canvas2.drawText(
             "$passing | $institution",
@@ -244,7 +247,7 @@ object PdfGenerator {
         val height4 = height3 + 45.5F
 
         canvas2.drawText("Achievements", 60F, height4 + 10F, sectionNamePaint)
-        canvas2.drawText(platform, 155F, height4, header2)
+        canvas2.drawText(platform, 158F, height4, header2)
         val achievementUpdated = achievement.replace("-","\n -",true)
         //canvas2.drawText(achievementUpdated, 155F, height4 + 15.5F, textPaint)
 
