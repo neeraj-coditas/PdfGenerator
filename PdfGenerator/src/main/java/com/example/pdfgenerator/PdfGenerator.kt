@@ -2,11 +2,14 @@ package com.example.pdfgenerator
 
 import android.content.Context
 import android.graphics.*
+import android.graphics.fonts.Font
+import android.graphics.fonts.FontFamily
 import android.graphics.pdf.PdfDocument
 import android.text.Layout
 import android.text.StaticLayout
 import android.text.TextPaint
 import android.widget.Toast
+import androidx.core.content.res.ResourcesCompat
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -147,7 +150,7 @@ object PdfGenerator {
         canvas.drawText("Operating systems", 155F, pageOneHeightTwo+160F, header2)
         canvas.drawText(operatingSystem, 155F, 175.5F+ pageOneHeightTwo, textPaint)
 
-
+        mypageInfo.pageHeight = 700
         myPdfDocument.finishPage(mypage)
 
         //PAGE 2
@@ -250,7 +253,7 @@ object PdfGenerator {
 
         canvas2.drawText("Achievements", 60F, height4 + 5F, sectionNamePaint)
         canvas2.drawText("A list of achievements that are relevant to the industry",158F, height4, hintPaint)
-        canvas2.drawText(platform, 158F, height4 + 20F, header2)
+        canvas2.drawText("Platform Name/ Certifier Name", 158F, height4 + 20F, header2)
         val achievementUpdated = achievement.replace("-","\n -",true)
         //canvas2.drawText(achievementUpdated, 155F, height4 + 15.5F, textPaint)
 
