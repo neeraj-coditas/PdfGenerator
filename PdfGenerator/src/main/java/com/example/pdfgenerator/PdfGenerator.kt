@@ -73,6 +73,7 @@ object PdfGenerator {
         val sectionNamePaint = TextPaint()
         sectionNamePaint.textSize = 13F
         sectionNamePaint.color = Color.parseColor("#2C74D6")
+        sectionNamePaint.style = Paint.Style.FILL_AND_STROKE
 
         val professionPaint = TextPaint()
         professionPaint.textSize = 13F
@@ -244,9 +245,9 @@ object PdfGenerator {
             textPaint
         )
 
-        val height4 = height3 + 45.5F
+        val height4 = height3 + 60F
 
-        canvas2.drawText("Achievements", 60F, height4 + 10F, sectionNamePaint)
+        canvas2.drawText("Achievements", 60F, height4 , sectionNamePaint)
         canvas2.drawText(platform, 158F, height4, header2)
         val achievementUpdated = achievement.replace("-","\n -",true)
         //canvas2.drawText(achievementUpdated, 155F, height4 + 15.5F, textPaint)
@@ -263,7 +264,7 @@ object PdfGenerator {
             )
         canvas2.save()
         textX = 155F
-        textY = height4
+        textY = height4 + 10F
         canvas2.translate(textX, textY)
         mTextLayout.draw(canvas2)
         canvas2.restore()
