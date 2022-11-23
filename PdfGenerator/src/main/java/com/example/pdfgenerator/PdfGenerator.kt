@@ -149,8 +149,6 @@ object PdfGenerator {
 
         canvas.drawText("Operating systems", 155F, pageOneHeightTwo+160F, header2)
         canvas.drawText(operatingSystem, 155F, 175.5F+ pageOneHeightTwo, textPaint)
-
-        mypageInfo.pageHeight = 700
         myPdfDocument.finishPage(mypage)
 
         //PAGE 2
