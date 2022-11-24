@@ -53,7 +53,7 @@ object PdfGenerator {
         passing: String,
         specialization:String,
         institution: String,
-        platform: String,
+        //platform: String,
         achievement: String
     ) {
         val myPdfDocument = PdfDocument()
@@ -131,7 +131,7 @@ object PdfGenerator {
         mTextLayout.draw(canvas)
         canvas.restore()*/
 
-        var pageOneHeightTwo = pageOneHeight + 20F
+        var pageOneHeightTwo = pageOneHeight + 50F
 
         canvas.drawText("Key Skills", 60F, pageOneHeightTwo+10F, sectionNamePaint)
 
