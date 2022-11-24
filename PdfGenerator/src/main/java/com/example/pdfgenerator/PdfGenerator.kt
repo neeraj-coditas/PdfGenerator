@@ -28,10 +28,6 @@ object PdfGenerator {
         designation: String,
         experience: String,
 
-        /*primarySkill: String,
-        secondarySkill: String,
-        primaryDomain: String,
-        secondaryDomain: String,*/
 
         language: String,
         database: String,
@@ -39,21 +35,11 @@ object PdfGenerator {
         cloud: String,
         operatingSystem: String,
 
-        //experienceList : ArrayList<ExperienceData>,
-        /*project1: String,
-        role1: String,
-        duration1: String,
-        description1: String,
-        project2: String,
-        role2: String,
-        duration2: String,
-        description2: String,*/
+        experienceList : ArrayList<ExperienceData>,
 
         qualification: String,
         passing: String,
-        specialization:String,
         institution: String,
-        //platform: String,
         achievement: String
     ) {
         val myPdfDocument = PdfDocument()
