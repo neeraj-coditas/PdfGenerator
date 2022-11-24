@@ -16,9 +16,9 @@ import java.io.IOException
 
 object PdfGenerator {
 
-    data class ExperienceData(val projectName: String, val role: String, val duration: String, val description: String)
+    data class ProjectData(val projectName: String, val role: String, val duration: String, val description: String)
 
-    var experienceList = ArrayList<ExperienceData>()
+    var experienceList = ArrayList<ProjectData>()
 
     fun createPDF(
         context: Context,
@@ -35,7 +35,7 @@ object PdfGenerator {
         cloud: String,
         operatingSystem: String,
 
-        experienceList : ArrayList<ExperienceData>,
+        experienceList : ArrayList<ProjectData>,
 
         qualification: String,
         passing: String,
