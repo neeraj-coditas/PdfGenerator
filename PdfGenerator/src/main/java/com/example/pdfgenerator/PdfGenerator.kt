@@ -28,10 +28,10 @@ object PdfGenerator {
         designation: String,
         experience: String,
 
-        primarySkill: String,
+        /*primarySkill: String,
         secondarySkill: String,
         primaryDomain: String,
-        secondaryDomain: String,
+        secondaryDomain: String,*/
 
         language: String,
         database: String,
@@ -114,7 +114,7 @@ object PdfGenerator {
 
         var pageOneHeight = mTextLayout.height + 180F
 
-        mTextLayout =
+        /*mTextLayout =
             StaticLayout(
                 "$fullName has a passion for $primarySkill and a $secondarySkill enthusiast, having gained experience in both $primaryDomain and $secondaryDomain over a span of ${experience}. He/She has pursued $qualification in $specialization and is currently working as $designation",
                 textPaint,
@@ -129,9 +129,9 @@ object PdfGenerator {
         textY = pageOneHeight + 20F
         canvas.translate(textX, textY)
         mTextLayout.draw(canvas)
-        canvas.restore()
+        canvas.restore()*/
 
-        var pageOneHeightTwo = pageOneHeight + 120F
+        var pageOneHeightTwo = pageOneHeight + 20F
 
         canvas.drawText("Key Skills", 60F, pageOneHeightTwo+10F, sectionNamePaint)
 
