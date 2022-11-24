@@ -35,7 +35,7 @@ object PdfGenerator {
         cloud: String,
         operatingSystem: String,
 
-        experienceList : ArrayList<ProjectData>,
+        //experienceList : ArrayList<ProjectData>,
 
         qualification: String,
         passing: String,
