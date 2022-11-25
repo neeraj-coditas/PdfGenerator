@@ -157,9 +157,9 @@ object PdfGenerator {
 
         for(i in experienceList.indices){
 
-            canvas2.drawText(experienceList[i].projectName, 155F, y, header2)
+            canvas2.drawText(experienceList[i].projectName, 155F, y+15F, header2)
             y += 15
-            canvas2.drawText("${experienceList[i].role} | ${experienceList[i].duration}", 155F, y + 15F, header3)
+            canvas2.drawText("${experienceList[i].role} | ${experienceList[i].duration}", 155F, y + 30F, header3)
 
             mTextLayout =
                 StaticLayout(
@@ -173,7 +173,7 @@ object PdfGenerator {
                 )
             canvas2.save()
             textX = 155F
-            textY = y + 25F
+            textY = y + 40F
             canvas2.translate(textX, textY)
             mTextLayout.draw(canvas2)
             canvas2.restore()
