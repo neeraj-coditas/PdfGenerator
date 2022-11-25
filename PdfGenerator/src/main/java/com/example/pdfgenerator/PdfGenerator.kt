@@ -157,8 +157,8 @@ object PdfGenerator {
 
         for(i in experienceList.indices){
 
-            canvas2.drawText(experienceList[i].projectName, 155F, y+12F, header2)
-            canvas2.drawText("${experienceList[i].role} | ${experienceList[i].duration}", 155F, y + 24F, header3)
+            canvas2.drawText(experienceList[i].projectName, 155F, y+15F, header2)
+            canvas2.drawText("${experienceList[i].role} | ${experienceList[i].duration}", 155F, y + 27F, header3)
 
             mTextLayout =
                 StaticLayout(
