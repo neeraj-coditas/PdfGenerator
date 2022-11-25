@@ -35,13 +35,14 @@ object PdfGenerator {
         cloud: String,
         operatingSystem: String,*/
 
-        //experienceList : ArrayList<ProjectData>,
+        experienceString: String,
 
         qualification: String,
         passing: String,
         institution: String,
         achievement: String
     ) {
+        var experienceList = ArrayList<ProjectData>()
         val myPdfDocument = PdfDocument()
         val bmp = BitmapFactory.decodeResource(context.resources, R.drawable.ic_coditas_name_logo)
         val scaledBitmap = Bitmap.createScaledBitmap(bmp, 80, 25, false)
