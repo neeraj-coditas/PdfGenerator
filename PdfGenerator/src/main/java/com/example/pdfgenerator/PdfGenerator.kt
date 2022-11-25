@@ -10,6 +10,8 @@ import android.text.StaticLayout
 import android.text.TextPaint
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -43,6 +45,9 @@ object PdfGenerator {
         achievement: String
     ) {
         var experienceList = ArrayList<ProjectData>()
+        val type = object : TypeToken<ArrayList<ProjectData>>() {}.type
+        experienceList = Gson().fromJson(experienceString,type)
+
         val myPdfDocument = PdfDocument()
         val bmp = BitmapFactory.decodeResource(context.resources, R.drawable.ic_coditas_name_logo)
         val scaledBitmap = Bitmap.createScaledBitmap(bmp, 80, 25, false)
