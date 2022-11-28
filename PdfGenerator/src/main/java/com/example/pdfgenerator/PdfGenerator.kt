@@ -1,5 +1,6 @@
 package com.example.pdfgenerator
 
+import android.content.ClipDescription
 import android.content.Context
 import android.graphics.*
 import android.graphics.fonts.Font
@@ -19,8 +20,10 @@ import java.io.IOException
 object PdfGenerator {
 
     data class ProjectData(val projectName: String, val role: String, val duration: String, val description: String)
+    data class SkillsData(val skillTitle: String, val skillDescription: String, val itemVisibility: Boolean)
 
     var experienceList = ArrayList<ProjectData>()
+    val skillList = ArrayList<SkillsData>()
 
     fun createPDF(
         context: Context,
@@ -30,13 +33,7 @@ object PdfGenerator {
         designation: String,
         experience: String,
 
-
-        language: String,
-        database: String,
-        vcs: String,
-        cloud: String,
-        operatingSystem: String,
-
+        skillString: String,
         experienceString: String,
 
         qualification: String,
@@ -45,8 +42,12 @@ object PdfGenerator {
         achievement: String
     ) {
         var experienceList = ArrayList<ProjectData>()
-        val type = object : TypeToken<ArrayList<ProjectData>>() {}.type
-        experienceList = Gson().fromJson(experienceString,type)
+        val experienceType = object : TypeToken<ArrayList<ProjectData>>() {}.type
+        experienceList = Gson().fromJson(experienceString,experienceType)
+
+        var skillsList = ArrayList<SkillsData>()
+        val skillType = object : TypeToken<ArrayList<SkillsData>>() {}.type
+        experienceList = Gson().fromJson(experienceString,skillType)
 
         val myPdfDocument = PdfDocument()
         val bmp = BitmapFactory.decodeResource(context.resources, R.drawable.ic_coditas_name_logo)
@@ -79,7 +80,7 @@ object PdfGenerator {
 
         val myPaint = Paint()
 
-        var mypageInfo = PdfDocument.PageInfo.Builder(400, 600, 1).create()
+        val mypageInfo = PdfDocument.PageInfo.Builder(400, 600, 1).create()
         val mypage = myPdfDocument.startPage(mypageInfo)
         val canvas = mypage.canvas
 
@@ -123,11 +124,13 @@ object PdfGenerator {
         mTextLayout.draw(canvas)
         canvas.restore()*/
 
-        var pageOneHeightTwo = pageOneHeight + 50F
+        val pageOneHeightTwo = pageOneHeight + 50F
 
         canvas.drawText("Key Skills", 60F, pageOneHeightTwo+10F, sectionNamePaint)
 
-        canvas.drawText("Programming Languages/Frameworks", 155F, pageOneHeightTwo, header2)
+
+
+/*        canvas.drawText("Programming Languages/Frameworks", 155F, pageOneHeightTwo, header2)
         canvas.drawText(language, 155F, 15.5F + pageOneHeightTwo, textPaint)
 
         canvas.drawText("Database", 155F, pageOneHeightTwo+40F, header2)
@@ -140,7 +143,7 @@ object PdfGenerator {
         canvas.drawText(cloud, 155F, 135.5F + pageOneHeightTwo, textPaint)
 
         canvas.drawText("Operating systems", 155F, pageOneHeightTwo+160F, header2)
-        canvas.drawText(operatingSystem, 155F, 175.5F+ pageOneHeightTwo, textPaint)
+        canvas.drawText(operatingSystem, 155F, 175.5F+ pageOneHeightTwo, textPaint)*/
         myPdfDocument.finishPage(mypage)
 
         //PAGE 2
