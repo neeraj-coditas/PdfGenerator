@@ -20,7 +20,7 @@ import java.io.IOException
 object PdfGenerator {
 
     data class ProjectData(val projectName: String, val role: String, val duration: String, val description: String)
-    data class SkillsData(val skillTitle: String, val skillDescription: String, val itemVisibility: Boolean)
+    data class SkillsData(val skillTitle: String, val skillDescription: String)
 
     var experienceList = ArrayList<ProjectData>()
     var skillList = ArrayList<SkillsData>()
@@ -106,7 +106,6 @@ object PdfGenerator {
         mTextLayout.height
 
         var pageOneHeight = mTextLayout.height + 180F
-
         var pageOneHeightTwo = pageOneHeight + 50F
 
         canvas.drawText("Key Skills", 60F, pageOneHeightTwo+10F, sectionNamePaint)
@@ -174,51 +173,6 @@ object PdfGenerator {
             y = 120F + mTextLayout.height + 20F
         }
 
-       /* canvas2.drawText(project1, 155F, 90F, header2)
-        canvas2.drawText("$role1 | $duration1", 155F, 105F, header3)
-
-        mTextLayout =
-            StaticLayout(
-                description1,
-                textPaint,
-                canvas2.width - 200,
-                Layout.Alignment.ALIGN_NORMAL,
-                1.0f,
-                0.0f,
-                true
-            )
-        canvas2.save()
-        textX = 155F
-        textY = 115F
-        canvas2.translate(textX, textY)
-        mTextLayout.draw(canvas2)
-        canvas2.restore()
-        mTextLayout.height
-
-        val height1 = 120F + mTextLayout.height + 20F
-
-        canvas2.drawText(project2, 155F, height1, header2)
-
-        val height2 = height1 + 15F
-        canvas2.drawText("$role2 | $duration2", 155F, height2, header3)
-
-        mTextLayout =
-            StaticLayout(
-                description2,
-                textPaint,
-                canvas2.width - 200,
-                Layout.Alignment.ALIGN_NORMAL,
-                1.0f,
-                0.0f,
-                true
-            )
-        canvas2.save()
-        textX = 155F
-        textY = height2 + 10F
-        canvas2.translate(textX, textY)
-        mTextLayout.draw(canvas2)
-        canvas2.restore()*/
-
         val height3 = y + 15F + mTextLayout.height + 30F
 
         canvas2.drawText("Education", 60F, height3 + 10, sectionNamePaint)
@@ -256,12 +210,10 @@ object PdfGenerator {
         mTextLayout.draw(canvas2)
         canvas2.restore()
         mTextLayout.height
-
-
-
         myPdfDocument.finishPage(mypage2)
 
 
+        //Generating PDF
         val file = File(context.getExternalFilesDir("/"), "$profession.pdf")
 
         try {
