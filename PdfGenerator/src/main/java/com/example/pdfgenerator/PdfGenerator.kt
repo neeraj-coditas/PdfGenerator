@@ -23,7 +23,7 @@ object PdfGenerator {
     data class SkillsData(val skillTitle: String, val skillDescription: String, val itemVisibility: Boolean)
 
     var experienceList = ArrayList<ProjectData>()
-    val skillList = ArrayList<SkillsData>()
+    var skillList = ArrayList<SkillsData>()
 
     fun createPDF(
         context: Context,
@@ -47,7 +47,7 @@ object PdfGenerator {
 
         var skillsList = ArrayList<SkillsData>()
         val skillType = object : TypeToken<ArrayList<SkillsData>>() {}.type
-        experienceList = Gson().fromJson(experienceString,skillType)
+        skillList = Gson().fromJson(skillString,skillType)
 
         val myPdfDocument = PdfDocument()
         val bmp = BitmapFactory.decodeResource(context.resources, R.drawable.ic_coditas_name_logo)
@@ -124,9 +124,16 @@ object PdfGenerator {
         mTextLayout.draw(canvas)
         canvas.restore()*/
 
-        val pageOneHeightTwo = pageOneHeight + 50F
+        var pageOneHeightTwo = pageOneHeight + 50F
 
         canvas.drawText("Key Skills", 60F, pageOneHeightTwo+10F, sectionNamePaint)
+
+        for(i in skillsList.indices){
+            canvas.drawText(skillsList[i].skillTitle, 155F, pageOneHeightTwo,header2)
+            canvas.drawText(skillsList[i].skillDescription,155F,15.5F + pageOneHeightTwo,textPaint)
+
+            pageOneHeightTwo += 40F
+        }
 
 
 
