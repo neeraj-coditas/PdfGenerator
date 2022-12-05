@@ -43,8 +43,6 @@ object PdfGenerator {
         val skillType = object : TypeToken<ArrayList<SkillsData>>() {}.type
         skillsList = Gson().fromJson(skillString,skillType)
 
-        Log.d("checklist",skillString)
-        Log.d("checklist",skillsList.toString())
         val myPdfDocument = PdfDocument()
         val bmp = BitmapFactory.decodeResource(context.resources, R.drawable.ic_coditas_name_logo)
         val scaledBitmap = Bitmap.createScaledBitmap(bmp, 80, 25, false)
@@ -112,23 +110,6 @@ object PdfGenerator {
 
             pageOneHeightTwo += 40F
         }
-
-
-
-/*        canvas.drawText("Programming Languages/Frameworks", 155F, pageOneHeightTwo, header2)
-        canvas.drawText(language, 155F, 15.5F + pageOneHeightTwo, textPaint)
-
-        canvas.drawText("Database", 155F, pageOneHeightTwo+40F, header2)
-        canvas.drawText(database, 155F, 55.5F+ pageOneHeightTwo, textPaint)
-
-        canvas.drawText("Version Control Systems", 155F, pageOneHeightTwo+80F, header2)
-        canvas.drawText(vcs, 155F, 95.5F + pageOneHeightTwo, textPaint)
-
-        canvas.drawText("Cloud Technologies", 155F, pageOneHeightTwo+120F, header2)
-        canvas.drawText(cloud, 155F, 135.5F + pageOneHeightTwo, textPaint)
-
-        canvas.drawText("Operating systems", 155F, pageOneHeightTwo+160F, header2)
-        canvas.drawText(operatingSystem, 155F, 175.5F+ pageOneHeightTwo, textPaint)*/
         myPdfDocument.finishPage(mypage)
 
         //PAGE 2
