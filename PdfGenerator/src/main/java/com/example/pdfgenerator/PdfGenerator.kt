@@ -47,7 +47,7 @@ object PdfGenerator {
 
         var skillsList = ArrayList<SkillsData>()
         val skillType = object : TypeToken<ArrayList<SkillsData>>() {}.type
-        skillList = Gson().fromJson(skillString,skillType)
+        skillsList = Gson().fromJson(skillString,skillType)
 
         val myPdfDocument = PdfDocument()
         val bmp = BitmapFactory.decodeResource(context.resources, R.drawable.ic_coditas_name_logo)
@@ -106,23 +106,6 @@ object PdfGenerator {
         mTextLayout.height
 
         var pageOneHeight = mTextLayout.height + 180F
-
-        /*mTextLayout =
-            StaticLayout(
-                "$fullName has a passion for $primarySkill and a $secondarySkill enthusiast, having gained experience in both $primaryDomain and $secondaryDomain over a span of ${experience}. He/She has pursued $qualification in $specialization and is currently working as $designation",
-                textPaint,
-                canvas.width - 100,
-                Layout.Alignment.ALIGN_NORMAL,
-                1.0f,
-                0.0f,
-                true
-            )
-        canvas.save()
-        textX = 60F
-        textY = pageOneHeight + 20F
-        canvas.translate(textX, textY)
-        mTextLayout.draw(canvas)
-        canvas.restore()*/
 
         var pageOneHeightTwo = pageOneHeight + 50F
 
