@@ -1,16 +1,13 @@
 package com.example.pdfgenerator
 
-import android.content.ClipDescription
 import android.content.Context
 import android.graphics.*
-import android.graphics.fonts.Font
-import android.graphics.fonts.FontFamily
 import android.graphics.pdf.PdfDocument
 import android.text.Layout
 import android.text.StaticLayout
 import android.text.TextPaint
+import android.util.Log
 import android.widget.Toast
-import androidx.core.content.res.ResourcesCompat
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.File
@@ -21,9 +18,6 @@ object PdfGenerator {
 
     data class ProjectData(val projectName: String, val role: String, val duration: String, val description: String)
     data class SkillsData(val skillTitle: String, val skillDescription: String)
-
-    var experienceList = ArrayList<ProjectData>()
-    var skillList = ArrayList<SkillsData>()
 
     fun createPDF(
         context: Context,
@@ -49,6 +43,7 @@ object PdfGenerator {
         val skillType = object : TypeToken<ArrayList<SkillsData>>() {}.type
         skillsList = Gson().fromJson(skillString,skillType)
 
+        Log.d("checklist",skillsList.toString())
         val myPdfDocument = PdfDocument()
         val bmp = BitmapFactory.decodeResource(context.resources, R.drawable.ic_coditas_name_logo)
         val scaledBitmap = Bitmap.createScaledBitmap(bmp, 80, 25, false)
