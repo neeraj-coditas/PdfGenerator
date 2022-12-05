@@ -43,6 +43,7 @@ object PdfGenerator {
         val skillType = object : TypeToken<ArrayList<SkillsData>>() {}.type
         skillsList = Gson().fromJson(skillString,skillType)
 
+        Log.d("checklist",skillString)
         Log.d("checklist",skillsList.toString())
         val myPdfDocument = PdfDocument()
         val bmp = BitmapFactory.decodeResource(context.resources, R.drawable.ic_coditas_name_logo)
