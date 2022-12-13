@@ -6,7 +6,6 @@ import android.graphics.pdf.PdfDocument
 import android.text.Layout
 import android.text.StaticLayout
 import android.text.TextPaint
-import android.util.Log
 import android.widget.Toast
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -21,19 +20,19 @@ object PdfGenerator {
 
     fun createPDF(
         context: Context,
-        fullName:String,
-        profession: String,
-        summary: String,
-        designation: String,
-        experience: String,
+        fullName:String?,
+        profession: String?,
+        summary: String?,
+        designation: String?,
+        experience: String?,
 
-        skillString: String,
-        experienceString: String,
+        skillString: String?,
+        experienceString: String?,
 
-        qualification: String,
-        passing: String,
-        institution: String,
-        achievement: String
+        qualification: String?,
+        passing: String?,
+        institution: String?,
+        achievement: String?
     ) {
         var experienceList = ArrayList<ProjectData>()
         val experienceType = object : TypeToken<ArrayList<ProjectData>>() {}.type
@@ -79,8 +78,8 @@ object PdfGenerator {
         val canvas = mypage.canvas
 
         canvas.drawBitmap(scaledBitmap, 55F, 70F, myPaint)
-        canvas.drawText(fullName, 60F, 140F, header1)
-        canvas.drawText(profession, 60F, 160F, professionPaint)
+        canvas.drawText(fullName ?: "", 60F, 140F, header1)
+        canvas.drawText(profession ?: "", 60F, 160F, professionPaint)
         var mTextLayout =
             StaticLayout(
                 "$summary. $fullName's educational background is $qualification and works as $designation at Coditas.",
@@ -154,7 +153,7 @@ object PdfGenerator {
 
         canvas2.drawText("Education", 60F, height3 + 10, sectionNamePaint)
         canvas2.drawText("Details of last educational qualification", 155F, height3 + 5F, hintPaint)
-        canvas2.drawText(qualification, 155F, height3 + 20F, header2)
+        canvas2.drawText(qualification ?: "", 155F, height3 + 20F, header2)
         canvas2.drawText(
             "$passing | $institution",
             155F,
@@ -167,7 +166,7 @@ object PdfGenerator {
         canvas2.drawText("Achievements", 60F, height4 + 5F, sectionNamePaint)
         canvas2.drawText("A list of achievements that are relevant to the industry",158F, height4, hintPaint)
         canvas2.drawText("Platform Name/ Certifier Name", 158F, height4 + 20F, header2)
-        val achievementUpdated = achievement.replace("-","\n -",true)
+        val achievementUpdated = achievement?.replace("-","\n -",true)
         //canvas2.drawText(achievementUpdated, 155F, height4 + 15.5F, textPaint)
 
         mTextLayout =
