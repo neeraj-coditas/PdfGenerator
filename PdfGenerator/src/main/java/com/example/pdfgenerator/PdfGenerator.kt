@@ -104,8 +104,8 @@ object PdfGenerator {
         canvas.drawText("Key Skills", 60F, pageOneHeightTwo+10F, sectionNamePaint)
 
         for(i in skillsList.indices){
-            canvas.drawText(skillsList[i].skillTitle, 155F, pageOneHeightTwo,header2)
-            canvas.drawText(skillsList[i].skillDescription,155F,15.5F + pageOneHeightTwo,textPaint)
+            canvas.drawText(skillsList[i].title, 155F, pageOneHeightTwo,header2)
+            canvas.drawText(skillsList[i].description,155F,15.5F + pageOneHeightTwo,textPaint)
 
             pageOneHeightTwo += 40F
         }
