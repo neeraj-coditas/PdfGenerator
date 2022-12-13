@@ -16,7 +16,7 @@ import java.io.IOException
 object PdfGenerator {
 
     data class ProjectData(val projectName: String, val role: String, val duration: String, val description: String)
-    data class SkillsData(val skillTitle: String, val skillDescription: String)
+    data class SkillsData(val title: String, val description: String)
 
     fun createPDF(
         context: Context,
